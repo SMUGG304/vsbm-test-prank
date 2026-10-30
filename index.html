@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VSBM Prank</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff000020 0px,
+    transparent 3px,
+    transparent 30px
+  );
+  animation: move 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes move {
+  to { transform: rotate(360deg); }
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  padding: 35px 20px;
+  background: #111;
+  border: 1px solid red;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #ff000055;
+}
+
+h1 {
+  color: red;
+  font-size: 30px;
+  text-shadow: 0 0 15px red;
+}
+
+p {
+  color: #aaa;
+  margin: 25px 0;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.run {
+  background: red;
+  color: white;
+}
+
+.gay {
+  background: #292929;
+  color: white;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.warning {
+  font-size: 12px;
+  color: #777;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="home">
+
+  <h1>⚠ VSBM TEST</h1>
+
+  <p>do you want run this shit?</p>
+
+  <button class="run" onclick="runTest()">
+    RUN
+  </button>
+
+  <button class="gay" onclick="goHome()">
+    IMMA GAY
+  </button>
+
+  <div class="warning">
+    GPU-intensive benchmark. Run only if you accept
+    the performance and heat impact.
+  </div>
+
+</div>
+
+<script>
+const VSBM_URL =
+  "https://cznull.github.io/vsbm";
+
+function runTest() {
+  const accepted = confirm(
+    "This will open the VSBM GPU benchmark. Continue?"
+  );
+
+  if (!accepted) return;
+
+  window.location.href = VSBM_URL;
+}
+
+function goHome() {
+  window.location.href =
+    window.location.pathname;
+}
+</script>
+
+</body>
+</html>
